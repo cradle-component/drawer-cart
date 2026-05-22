@@ -37,6 +37,8 @@ Then in your site header, where you want to have a cart `icon` add the following
 * `height` of the cart, default is `100vh`
 * `offset` top of cart
 * `target` cart button, default is `#cart-buttom`
+* `button` class, default is `btn btn-primary`
+* `url` button url, default is `/checkout`
 
 Also you are free to use own content inside the component tag.
 ```
