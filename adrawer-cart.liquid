@@ -1,12 +1,12 @@
 <--
   CradleCMS drawer cart component
-  version 1.0.0
+  version 1.0.1
  -->
 <template id="drawer-cart-template">
     <div x-data="{ ...drawerCart(), ...$el.parentElement.data() }" x-cloak>
       <div class="acart">
             <header>
-                <span>{{ 'CART' | t }}</span>
+                <span>{{ 'CART' | t:'cart' }}</span>
                 <button @click.prevent="toggleOpen()">&times;</button>
             </header>
             <ul>
@@ -33,8 +33,11 @@
                     </article>
                 </li>
             </template>
+            <template x-if="!cart.items">
+                <li><h5>{{'Your cart is empty' | t:'cart'}}</h5></li>
+            </template>
             </ul>
-            <template x-if="cart.amount">
+            <template x-if="cart.items">
             <footer>
                 <ul>
                     <li class="small">
@@ -46,8 +49,7 @@
                         <span x-text="money(cart, cart.amount.total)"></span>
                     </li>
                 </ul>
-                <button :class="button" @click="document.location = url">{{'Go to Checkout' | t}}</button>
-            </footer>
+                <button :class="button" @click="document.location = url">{{'Go to Checkout' | t:'cart'}}</button>
             </footer>
             </template>
       </div>
@@ -91,6 +93,10 @@ cartCSS.replaceSync(`
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     visibility: visible;
+}
+
+.acart li > h5 {
+    margin: 0 auto;
 }
 
 .acart .small {
