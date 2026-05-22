@@ -46,7 +46,7 @@
                         <span x-text="money(cart, cart.amount.total)"></span>
                     </li>
                 </ul>
-                <button class="btn btn-primary" @click="document.location = '/checkout'">{{'Go to Checkout' | t}}</button>
+                <button :class="button" @click="document.location = url">{{'Go to Checkout' | t}}</button>
             </footer>
             </footer>
             </template>
@@ -286,6 +286,8 @@ function drawerCart() { return {
     target: "cart-button",
     acart: undefined,
     thumb: "50x50",
+    url: "/checkout",
+    button: "btn btn-primary",
     currencies: {},
     init() {
         let cartButton = document.getElementById(this.target);
