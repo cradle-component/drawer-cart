@@ -1,9 +1,12 @@
 # drawer-cart
+A drawer cart component for [CradleCMS](https://cradlecms.com) `eCommerce`.
+
+It uses `alpinejs` templates, you can get alpinejs [here](https://github.com/alpinejs/alpine).
 
 ## installation
 Put the `adrawer-cart.liquid` file into your theme `components` folder.
 
-## usage
+## example
 
 In `layout/theme.liquid` include the component after the html `body` and before `</html>`. 
 ```
