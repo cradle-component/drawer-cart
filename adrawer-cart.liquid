@@ -1,7 +1,4 @@
-<--
-  CradleCMS drawer cart component
-  version 1.0.1
- -->
+<!-- CradleCMS drawer cart component, version 1.0.1 -->
 <template id="drawer-cart-template">
     <div x-data="{ ...drawerCart(), ...$el.parentElement.data() }" x-cloak>
       <div class="acart">
@@ -55,7 +52,6 @@
       </div>
     </div>
 </template>
-
 <script>
 const cartCSS = new CSSStyleSheet()
 
@@ -65,7 +61,6 @@ cartCSS.replaceSync(`
     --cart-height: 100vh;
     --cart-offset: 0;
 }
-
 .acart-wrapper {
     position: relative;
     --bg: #fafafa;
@@ -76,7 +71,6 @@ cartCSS.replaceSync(`
     --tn: 50px;
     cursor: pointer;
 }
-
 .acart {
     position:fixed;
     display: flex;
@@ -94,34 +88,27 @@ cartCSS.replaceSync(`
     overscroll-behavior: contain;
     visibility: visible;
 }
-
 .acart li > h5 {
     margin: 0 auto;
 }
-
 .acart .small {
     font-size: 0.8rem;
 }
-
 .acart.open {
     visibility: visible;
     animation: cart-slide-in 0.2s linear forwards
-
 }
 .acart.close {
     visibility: visible;
     animation: cart-slide-out 0.2s linear forwards
 }
-
 @keyframes cart-slide-in {
   to { right: 0rem }
 }
-
 @keyframes cart-slide-out {
   from {right: 0 }
   to { right: calc(var(--cart-width)*-1) }
-}
-    
+}   
 .acart header {
     margin: 0;
     padding: 0.5em 1em;
@@ -152,15 +139,12 @@ cartCSS.replaceSync(`
 .acart header button:hover {
     transform: rotate(44deg);
 }
-
 .acart section {
     padding: 0.5em;
 }
-
 .acart hr {
     margin: 0.5em;
 }
-
 .acart ul {
     margin-top: 0.5rem;
     list-style-type: none
@@ -194,7 +178,6 @@ cartCSS.replaceSync(`
 .acart article div:last-child {
     margin-top: 0.2rem;
 }
-
 .acart artice div .trash {
     cursor: finger:
     padding:0.1rem 0.2rem;
@@ -216,7 +199,6 @@ cartCSS.replaceSync(`
 	border: var(--b);
 	border-radius: var(--br);
 }
-
 .acart article div .quantity * {
 	background: transparent;
 	color: inherit;
@@ -258,16 +240,13 @@ cartCSS.replaceSync(`
 .acart article div:last-child span {
     font-size: 0.8rem;
 }
-
 .acart figure {
     width: var(--tn);
     height: var(--tn);
 }
-
 .acart figure img {
     border-radius: var(--br);
 }
-
 .acart footer {
     border-top: var(--b);
     margin: 0;
@@ -284,7 +263,6 @@ cartCSS.replaceSync(`
     width: 100%;
 }
 `);
-
 
 function drawerCart() { return {
     open: false,
@@ -360,8 +338,7 @@ function drawerCart() { return {
         if(src.lastIndexOf(".svg") > 0) {
             return src
         };
-        
-        
+                
         if(typeof(size) === 'string'){
             if(size.indexOf('_') > 0) {
                 suffix = '_' + size;
@@ -375,15 +352,12 @@ function drawerCart() { return {
             suffix = '_' + size + '_' + size;
         }
     
-        // note: can be 'cropped', 'whitefit', 'blackfit', 'extend'
         if (crop && suffix.indexOf('_cropped') < 0) {
             suffix += '_' + crop;
         }
         
-        var dotpos = src.lastIndexOf('.');
-        var resized = src.slice(0,dotpos) + suffix + src.slice(dotpos);
-        
-        return resized;
+        let dotpos = src.lastIndexOf('.');
+        return src.slice(0,dotpos) + suffix + src.slice(dotpos);
     },
     setQuantity(i,q) {
         const item = this.cart.items[i];
