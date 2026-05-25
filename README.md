@@ -8,12 +8,17 @@ Put the `adrawer-cart.liquid` file into your theme `components` folder.
 
 ## example
 
-In `layout/theme.liquid` include the component after the html `body` and before `</html>`. 
+In `layout/theme.liquid` include the component somewhere, like after the html `</body>` tag. 
 ```
+</body>
 {% component 'adrawer-cart' %}
+</html>
 ```
+You add a `cart-button` and place the markup for in inside the component, in the example below we're using an inlined svg image with a `quantity` badge on the top right corner. 
 
-Then in your site header, where you want to have a cart `icon` add the following snippet.
+> We are using [tailwindcss](https://tailwindcss.com) here but it's not required for you to use. 
+
+In your site header, where you want to have a cart `icon` add the following snippet.
 
 ```
 <a-drawer-cart width="20rem" background="#555" color="#fafafa" border="1px solid #888" thumb="64x64"  class="relative inline-block p-2 pl-0 group">
@@ -30,25 +35,25 @@ Then in your site header, where you want to have a cart `icon` add the following
  </a-drawer-cart>
 ```
 
-### You can pass in some customisation through attributes.
+### Customisation
+You customize the component using attributes on the `<a-drawer-cart ...>` tag.
 
-* `background` color
-* `color` text 
-* `border` style
-* `thumb` image size in pixels
-* `width` of the cart, default is `20rem`
-* `height` of the cart, default is `100vh`
-* `offset` top of cart
-* `target` cart button, default is `#cart-buttom`
-* `button` class, default is `btn btn-primary`
-* `url` button url, default is `/checkout`
+* `background` color, default `#fafafa`
+* `color` text, default `#555` 
+* `border` style, default `1px solid #ddd`
+* `radius` border, default `3px`
+* `thumb` image size in pixels, default `50x50`
+* `width` of the cart, default `20rem`
+* `height` of the cart, default `100vh`
+* `offset` top of cart, default `unset`
+* `target` cart button, default `#cart-button`
+* `button` class, default `btn btn-primary`
+* `url` button action url, default `/checkout`
 
-Also you are free to use own content inside the component tag.
+Add your cart button wrapped inside the component.
 ```
 <a-drawer-cart width="20rem" background="#555" color="#fafafa" border="1px solid #888" thumb="64x64"  class="relative inline-block p-2 pl-0 group">
-  <div id="cart-button">
-  <!- add whatever you want here -> 
-  </div>
+  <!- add what you want in here ->  
+  <div id="cart-button"> ... </div>
  </a-drawer-cart>
 ```
-
