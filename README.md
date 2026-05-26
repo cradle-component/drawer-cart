@@ -51,7 +51,7 @@ You pass configuration using html attributes on the `<a-drawer-cart ...>` tag.
 * `thumb` image size in pixels, default `50x50`
 * `width` of the cart, default `20rem`
 * `height` of the cart, default `100vh`
-* `offset` top of cart, default `unset`
+* `offset` top of cart, default `0`
 * `target` cart button, default `#cart-button`
 * `button` class, default `btn btn-primary`
 * `url` button action url, default `/checkout`
