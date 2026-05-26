@@ -7,7 +7,7 @@ A drawer cart component for [CradleCMS](https://cradlecms.com) `eCommerce`.
 
 It uses `alpinejs` templates, you can get alpinejs [here](https://github.com/alpinejs/alpine).
 
-> Currency is formatted based to the `cart` locale (language and country) `en-US` 
+> Currency is formatted using the `cart` locale (language and country) `en-US` 
 
 ## installation
 Put the `adrawer-cart.liquid` file into your theme `components` folder.
