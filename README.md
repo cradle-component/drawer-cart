@@ -42,7 +42,7 @@ In your site header, where you want to have a cart `icon` add the following snip
 ```
 
 ### Customisation
-You customize the component using attributes on the `<a-drawer-cart ...>` tag.
+You pass configuration using html attributes on the `<a-drawer-cart ...>` tag.
 
 * `background` color, default `#fafafa`
 * `color` text, default `#555` 
