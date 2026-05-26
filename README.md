@@ -1,6 +1,9 @@
 # drawer-cart
 A drawer cart component for [CradleCMS](https://cradlecms.com) `eCommerce`.
 
+<img width="393" height="687" alt="Screenshot 2026-05-22 at 22 08 37" src="https://github.com/user-attachments/assets/c246771f-3139-4a7b-b116-af7851c62f14" />
+<img width="544" height="988" alt="Screenshot 2026-05-26 at 07 26 33" src="https://github.com/user-attachments/assets/27639ee7-10af-4c22-a57f-f1886d8df95e" />
+
 It uses `alpinejs` templates, you can get alpinejs [here](https://github.com/alpinejs/alpine).
 
 ## installation
