@@ -46,19 +46,20 @@ You pass configuration using html attributes on the `<a-drawer-cart ...>` tag.
 
 * `background` color, default `#fafafa`
 * `color` text, default `#555` 
-* `border` style, default `1px solid #ddd`
+* `border` style, default `1px solid #00000022`
 * `radius` border, default `3px`
 * `thumb` image size in pixels, default `50x50`
 * `width` of the cart, default `20rem`
 * `height` of the cart, default `100vh`
 * `offset` top of cart, default `0`
+* `shadow` of cart, default `0px 4px 10px rgba(100,100,100,0.5)`
 * `target` cart button, default `#cart-button`
 * `button` class, default `btn btn-primary`
 * `url` button action url, default `/checkout`
 
 Add your cart button wrapped inside the component.
 ```
-<a-drawer-cart width="20rem" background="#555" color="#fafafa" border="1px solid #888" thumb="64x64"  class="relative inline-block p-2 pl-0 group">
+<a-drawer-cart width="24rem" background="yellow" color="#555" shadow="none" thumb="64x64"  class="relative inline-block p-2 pl-0 group">
   <!- add what you want in here ->  
   <div id="cart-button"> ... </div>
  </a-drawer-cart>
