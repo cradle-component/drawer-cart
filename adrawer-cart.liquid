@@ -1,4 +1,4 @@
-<!-- CradleCMS drawer cart component, version 1.0.5 -->
+<!-- CradleCMS drawer cart component, version 1.0.6 -->
 <template id="drawer-cart-template">
 <div x-data="{ ...drawerCart(), ...$el.parentElement.data() }" x-cloak>
     <div class="acart">
@@ -63,12 +63,12 @@
     position: relative;
     --bg: #fafafa;
     --fg: #555;
-    --b: 1px solid #ddd;
+    --b: 1px solid #00000022;
     --br: 3px;
     --t: 0;
     --tn: 50px;
     --o: var(--cart-offset);
-    cursor: pointer;
+    --s: 0px 4px 10px rgba(100,100,100,0.5);
 }
 .acart {
     position:fixed;
@@ -88,7 +88,7 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     visibility: visible;
-    box-shadow: 3px 3px 20px #777;
+    box-shadow: var(--s);
 }
 .acart li > h5 {
     margin: 0 auto;
@@ -105,7 +105,7 @@
 }
 .acart.close {
     visibility: visible;
-    animation: cart-slide-out 0.2s linear forwards
+    animation: cart-slide-out 0.2s linear forwards;
 }
 @keyframes cart-slide-in {
   to { right: 0rem }
@@ -121,7 +121,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(100,100,100,0.5);
 }
 .acart header span {
     font-weight: 700;
@@ -195,7 +194,7 @@
     margin-top: 0.2rem;
 }
 .acart article div .trash {
-    cursor: finger;
+    cursor: pointer;
     padding: 0.1rem 0.2rem;
     margin: 0;
     display: block;
@@ -273,7 +272,6 @@
     margin: 0;
     padding: 0.5em 1em;
     margin-top: auto;
-    box-shadow: 0 0 10px rgba(100,100,100,0.5);
 }
 .acart footer ul li {
     padding: 0;
@@ -314,10 +312,13 @@ function drawerCart() { return {
             this.el.style.setProperty("--b",this.border);
         }
         if(this.radius) {
-            this.el.style.setProperty("--br", this.radius);
+            this.el.style.setProperty("--br",this.radius);
         }
         if(this.thumb) {
            this.el.style.setProperty("--tn",parseInt(this.thumb)+'px'); 
+        }
+        if(this.shadow) {
+            this.el.style.setProperty("--s",this.shadow);
         }
     },
     async fetch() {
